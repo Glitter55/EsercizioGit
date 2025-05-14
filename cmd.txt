@@ -1,0 +1,273 @@
+Microsoft Windows [Versione 10.0.26100.3915]
+(c) Microsoft Corporation. Tutti i diritti riservati.
+
+C:\Users\chris\Desktop\EsercizioGit\testGit>cd EsercizioGit
+Impossibile trovare il percorso specificato.
+
+C:\Users\chris\Desktop\EsercizioGit\testGit>git init
+Initialized empty Git repository in C:/Users/chris/Desktop/EsercizioGit/testGit/.git/
+
+C:\Users\chris\Desktop\EsercizioGit\testGit>git config user.email "Christ22@gmail.com"
+
+C:\Users\chris\Desktop\EsercizioGit\testGit>git config user.name "Chris"
+
+C:\Users\chris\Desktop\EsercizioGit\testGit>git add .
+
+C:\Users\chris\Desktop\EsercizioGit\testGit>git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   test.txt
+
+
+C:\Users\chris\Desktop\EsercizioGit\testGit>git commit -m "m1"
+[master (root-commit) 84883d3] m1
+ 1 file changed, 1 insertion(+)
+ create mode 100644 test.txt
+
+C:\Users\chris\Desktop\EsercizioGit\testGit>git add .
+
+C:\Users\chris\Desktop\EsercizioGit\testGit>git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   test.txt
+
+
+C:\Users\chris\Desktop\EsercizioGit\testGit>git commit -m "m2"
+[master 827146b] m2
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+C:\Users\chris\Desktop\EsercizioGit\testGit>git add .
+
+C:\Users\chris\Desktop\EsercizioGit\testGit>git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   test.txt
+
+
+C:\Users\chris\Desktop\EsercizioGit\testGit>git commit -m "m3"
+[master 6cc6b84] m3
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+C:\Users\chris\Desktop\EsercizioGit\testGit>git status
+On branch master
+nothing to commit, working tree clean
+
+C:\Users\chris\Desktop\EsercizioGit\testGit>git log --oneline
+6cc6b84 (HEAD -> master) m3
+827146b m2
+84883d3 m1
+
+C:\Users\chris\Desktop\EsercizioGit\testGit>git diff 8488 6cc6
+diff --git a/test.txt b/test.txt
+index 208b062..2b6334f 100644
+--- a/test.txt
++++ b/test.txt
+@@ -1 +1,5 @@
+-Ciao a tutti questa è una pagina di test per l'esercizio su Git
+\ No newline at end of file
++Ciao a tutti questa è una pagina di test per l'esercizio su Git.
++
++Questo è un testo.
++
++Questo è il test dei test.
+\ No newline at end of file
+
+C:\Users\chris\Desktop\EsercizioGit\testGit>git revert 6cc6
+[master 908c8d2] Revert "m3"
+ 1 file changed, 1 insertion(+), 3 deletions(-)
+
+C:\Users\chris\Desktop\EsercizioGit\testGit>git reser --hard 6cc6
+git: 'reser' is not a git command. See 'git --help'.
+
+The most similar commands are
+        reset
+        restore
+
+C:\Users\chris\Desktop\EsercizioGit\testGit>git reset --hard 6cc6
+HEAD is now at 6cc6b84 m3
+
+C:\Users\chris\Desktop\EsercizioGit\testGit>git checkout -b featureBranch
+Switched to a new branch 'featureBranch'
+
+C:\Users\chris\Desktop\EsercizioGit\testGit>git branch
+* featureBranch
+  master
+
+C:\Users\chris\Desktop\EsercizioGit\testGit>git add .
+
+C:\Users\chris\Desktop\EsercizioGit\testGit>git status
+On branch featureBranch
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   test.txt
+
+
+C:\Users\chris\Desktop\EsercizioGit\testGit>got commit -m "m4"
+"got" non è riconosciuto come comando interno o esterno,
+ un programma eseguibile o un file batch.
+
+C:\Users\chris\Desktop\EsercizioGit\testGit>git commit -m "m4"
+[featureBranch 623f6f9] m4
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+C:\Users\chris\Desktop\EsercizioGit\testGit>git switch master
+Switched to branch 'master'
+
+C:\Users\chris\Desktop\EsercizioGit\testGit>git merge featureBranch
+Updating 6cc6b84..623f6f9
+Fast-forward
+ test.txt | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+C:\Users\chris\Desktop\EsercizioGit\testGit>git branch -d featureBranch
+Deleted branch featureBranch (was 623f6f9).
+
+C:\Users\chris\Desktop\EsercizioGit\testGit>git branch
+* master
+
+C:\Users\chris\Desktop\EsercizioGit\testGit>git checkout -b recursiveBranch
+Switched to a new branch 'recursiveBranch'
+
+C:\Users\chris\Desktop\EsercizioGit\testGit>git branch
+  master
+* recursiveBranch
+
+C:\Users\chris\Desktop\EsercizioGit\testGit>git add .
+
+C:\Users\chris\Desktop\EsercizioGit\testGit>git status
+On branch recursiveBranch
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   test.txt
+
+
+C:\Users\chris\Desktop\EsercizioGit\testGit>git commit -m "m5"
+[recursiveBranch c57928f] m5
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+C:\Users\chris\Desktop\EsercizioGit\testGit>git log --oneline
+c57928f (HEAD -> recursiveBranch) m5
+623f6f9 (master) m4
+6cc6b84 m3
+827146b m2
+84883d3 m1
+
+C:\Users\chris\Desktop\EsercizioGit\testGit>git switch master
+Switched to branch 'master'
+
+C:\Users\chris\Desktop\EsercizioGit\testGit>git branch
+* master
+  recursiveBranch
+
+C:\Users\chris\Desktop\EsercizioGit\testGit>git merge recursiveBranch
+Updating 623f6f9..c57928f
+Fast-forward
+ test.txt | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+C:\Users\chris\Desktop\EsercizioGit\testGit>git branch -d recursiveBranch
+Deleted branch recursiveBranch (was c57928f).
+
+C:\Users\chris\Desktop\EsercizioGit\testGit>git branch
+* master
+
+C:\Users\chris\Desktop\EsercizioGit\testGit>git checkout -b conflitBranch
+Switched to a new branch 'conflitBranch'
+
+C:\Users\chris\Desktop\EsercizioGit\testGit>git branch
+* conflitBranch
+  master
+
+C:\Users\chris\Desktop\EsercizioGit\testGit>git add .
+
+C:\Users\chris\Desktop\EsercizioGit\testGit>git status
+On branch conflitBranch
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   test.txt
+
+
+C:\Users\chris\Desktop\EsercizioGit\testGit>git commit -m "m5"
+[conflitBranch 815347e] m5
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+C:\Users\chris\Desktop\EsercizioGit\testGit>git log --oneline
+815347e (HEAD -> conflitBranch) m5
+c57928f (master) m5
+623f6f9 m4
+6cc6b84 m3
+827146b m2
+84883d3 m1
+
+C:\Users\chris\Desktop\EsercizioGit\testGit>git commit -m "m6"
+On branch conflitBranch
+nothing to commit, working tree clean
+
+C:\Users\chris\Desktop\EsercizioGit\testGit>git log --oneline
+815347e (HEAD -> conflitBranch) m5
+c57928f (master) m5
+623f6f9 m4
+6cc6b84 m3
+827146b m2
+84883d3 m1
+
+C:\Users\chris\Desktop\EsercizioGit\testGit>git switch master
+Switched to branch 'master'
+
+C:\Users\chris\Desktop\EsercizioGit\testGit>git branch
+  conflitBranch
+* master
+
+C:\Users\chris\Desktop\EsercizioGit\testGit>git add .
+
+C:\Users\chris\Desktop\EsercizioGit\testGit>git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   test.txt
+
+
+C:\Users\chris\Desktop\EsercizioGit\testGit>git commit -m "m6"
+[master 8242bb3] m6
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+C:\Users\chris\Desktop\EsercizioGit\testGit>git log --oneline
+8242bb3 (HEAD -> master) m6
+c57928f m5
+623f6f9 m4
+6cc6b84 m3
+827146b m2
+84883d3 m1
+
+C:\Users\chris\Desktop\EsercizioGit\testGit>git merge conflitBranch
+Auto-merging test.txt
+CONFLICT (content): Merge conflict in test.txt
+Automatic merge failed; fix conflicts and then commit the result.
+
+C:\Users\chris\Desktop\EsercizioGit\testGit>git add test.txt
+
+C:\Users\chris\Desktop\EsercizioGit\testGit>git commit -m "Risolto conflitto tra master e conflitBranch"
+[master ed44b99] Risolto conflitto tra master e conflitBranch
+
+C:\Users\chris\Desktop\EsercizioGit\testGit>git add .
+
+C:\Users\chris\Desktop\EsercizioGit\testGit>git commit -m "Risolto il conflitto tra master e conflitBranch"
+[master a6f739d] Risolto il conflitto tra master e conflitBranch
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+C:\Users\chris\Desktop\EsercizioGit\testGit>git branch -d conflitBramch
+error: branch 'conflitBramch' not found
+
+C:\Users\chris\Desktop\EsercizioGit\testGit>git branch -d conflitBranch
+Deleted branch conflitBranch (was 815347e).
+
+C:\Users\chris\Desktop\EsercizioGit\testGit>git branch
+* master
+
+C:\Users\chris\Desktop\EsercizioGit\testGit>
