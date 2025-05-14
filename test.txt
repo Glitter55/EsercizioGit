@@ -1,3 +1,5 @@
 Ciao a tutti questa è una pagina di test per l'esercizio su Git.
 
-Questo è un testo
+Questo è un testo.
+
+Questo è il test dei test.
