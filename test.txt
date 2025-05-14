@@ -1,1 +1,3 @@
-Ciao a tutti questa è una pagina di test per l'esercizio su Git
+Ciao a tutti questa è una pagina di test per l'esercizio su Git.
+
+Questo è un testo
